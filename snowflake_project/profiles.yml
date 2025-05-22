@@ -1,0 +1,13 @@
+snowflake_project:
+  outputs:
+    dev:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      database: "{{ env_var('DBT_DBNAME') }}"
+      password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+      threads: 2
+      type: snowflake
+      user: "{{ env_var('DBT_SNOWFLAKE_USER') }}"
+      warehouse: COMPUTE_WH
+  target: dev
